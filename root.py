@@ -39,3 +39,7 @@
 
 # By 안에 함수가 있어 By랑 Click을 분리할 수 없음 -> TypeError: Cannot read properties of undefined (reading 'findElement'), 
 # TypeError: kakaoLogin(...).click is not a function등 타입 에러 유발
+
+#BannerGroup = browser.find_element(By.XPATH,'//*[@id="mFeature"]/div/div/div[2]/div[2]/div/div')
+#BannerText = BannerGroup.text
+#print("현재 배너 정보는" + BannerText)
