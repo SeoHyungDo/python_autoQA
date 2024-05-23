@@ -32,8 +32,15 @@ browser.find_element(By.XPATH,'//*[@id="mainContent"]/div/div/form/div[4]/button
 print("로그인 화면_Password 입력 완료!")
 print("로그인 성공! Tistory 메인 화면 출력")
 sleep(3)
-   
+
 browser.find_element(By.XPATH,'//*[@id="kakaoGnb"]/ul/li[1]/a').click() # 좌측 상단 '피드' 버튼 클릭
+print("피드 메뉴 진입 성공!")
+feed = browser.find_element(By.XPATH,'//*[@id="kakaoGnb"]/ul/li[1]/a')
+feedName = feed.text
+if feedName == '피드' : print("메뉴명은 파드가 맞습니다!")
+if feedName != '피드' : print("메뉴명은 현재 파드가 아니라," + feedName + " 입니다")
+
+
 sleep(10)
 
 
