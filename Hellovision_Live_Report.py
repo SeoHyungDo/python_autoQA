@@ -7,7 +7,7 @@ import pytest, logging # 로그 레벨 설정
 session_logger = logging.getLogger('snowflake.snowpark.session')
 session_logger.setLevel(logging.DEBUG) # 로그 레벨 설정
 
-url = "https://rms.lghellovision.com"
+url = "비밀"
 
 browser = webdriver.Chrome()
 browser.get(url)
