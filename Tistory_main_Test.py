@@ -368,6 +368,78 @@ try :
         fail_reason_list.append(fail_reason)
         pyautogui.screenshot(f'./{now}_Fail_shot_TC_014.jpg',region=(0,0,1287,900))
 
+    #TC_015 스토리 크리에이터 메뉴 좋아요 버튼 / Count 노출 여부 확인
+    tc_progress = "ATC_015"
+    heart_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[2]/div[2]/a[1]/div[1]/div/span[1]/span[1]')
+    like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[2]/div[2]/a[1]/div[1]/div/span[1]/span[2]')
+    
+    print("----------------------------- ATC_015 -------------------------------")   
+    try :
+        if heart_icon.is_displayed() and like_count.is_displayed() :
+            print("스토리 크리에이터 첫번째 포스트 좋아요 아이콘, 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '스토리 크리에이터 첫번째 포스트 좋아요 아이콘, 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_015.jpg',region=(0,0,1287,900))
+
+  #TC_016 스토리 크리에이터 댓글 버튼 / Count 노출 여부 확인
+    tc_progress = "ATC_016"
+    comment_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[2]/div[2]/a[1]/div[1]/div/span[2]/span[1]')
+    comment_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[2]/div[2]/a[2]/div[1]/div/span[2]/span[2]')
+    
+    print("----------------------------- ATC_016 -------------------------------")   
+    try :
+        if comment_icon.is_displayed() and comment_count.is_displayed() :
+            print("스토리 크리에이터 첫번째 포스트 댓글 아이콘, 댓글 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '스토리 크리에이터 첫번째 포스트 댓글 아이콘, 댓글 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_016.jpg',region=(0,0,1287,900))
+
+
+    #TC_017 스토리 크리에이터 메뉴 하단 페이징 버튼 노출 여부 확인
+    tc_progress = "ATC_017"
+    post_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[2]/div[2]/a[1]/div[2]/div')
+    
+    print("----------------------------- ATC_017 -------------------------------")   
+    try :
+        if post_image.is_displayed() :
+            print("스토리 크리에이터 포스트 이미지 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '스토리 크리에이터 포스트 이미지 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_017.jpg',region=(0,0,1287,900))
+
+
+    #TC_018 스토리 크리에이터 메뉴 하단 페이징 버튼 노출 여부 확인
+    tc_progress = "ATC_018"
+    Paging_left = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[4]/div/button[1]/span')
+    Paging_right = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[2]/div/div[2]/div[4]/div/button[2]/span')
+    print("----------------------------- ATC_018 -------------------------------")   
+    try :
+        if Paging_left.is_displayed() and Paging_right.is_displayed() :
+            print("스토리 크리에이터 하단 좌, 우 페이징 버튼 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '스토리 크리에이터 하단 좌, 우 페이징 버튼 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_018.jpg',region=(0,0,1287,900))
+
 #    action = browser.find_element(By.CSS_SELECTOR,'body')
 
 #    action.send_keys(Keys.PAGE_DOWN)
