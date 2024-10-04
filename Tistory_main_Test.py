@@ -485,6 +485,9 @@ try :
     
     
     travel_top1_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[2]/div')
+    travel_top1_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/div/img')
+    travel_top1_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/span')
+    travel_top1_text_blog_name = travel_top1_blog_name.text
     travel_top1_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/strong')
     travel_top1_text_title_text = travel_top1_text_title.text
     travel_top1_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[1]/p')
@@ -499,13 +502,14 @@ try :
     travel_top1_date_num = travel_top1_date.text
 
     print("-------------------- 여행·맛집 탭 좌측 상단 포스트 정보 -------------")
+    print("여행·맛집 탭 좌측 상단 포스트 블로그 명 => " + travel_top1_text_blog_name)
     print("여행·맛집 탭 좌측 상단 포스트 타이틀 => " + travel_top1_text_title_text)
     print("여행·맛집 탭 좌측 상단 포스트 내용 => " + travel_top1_text_desc_text)
     print("여행·맛집 탭 좌측 상단 포스트 좋아요 카운트 => " + travel_top1_like_count_num)
     print("여행·맛집 탭 좌측 상단 포스트 댓글 카운트 => " + travel_top1_reply_count_num)
     print("여행·맛집 탭 좌측 상단 포스트 작성 일자 => " + travel_top1_date_num)
 
-    #TC_021 여행·맛집 탭 6개 포스트 사진 노출 여부 확인
+    #TC_021 여행·맛집 탭 좌측 상단 포스트 사진 노출 여부 확인
 
     tc_progress = "ATC_021"
     print("----------------------------- ATC_021 -------------------------------")   
@@ -520,10 +524,41 @@ try :
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
         pyautogui.screenshot(f'./{now}_Fail_shot_TC_021.jpg',region=(0,0,1287,900))
-    
-    #TC_022 여행·맛집 탭 6개 포스트 타이틀 노출 여부 확인
+
+    #TC_022 여행·맛집 탭 좌측 상단 포스트 블로거 아이콘 노출 여부 확인
     tc_progress = "ATC_022"
     print("----------------------------- ATC_022 -------------------------------")   
+    try :
+        if travel_top1_blog_image.is_displayed() :
+            print("여행·맛집 탭 좌측 상단 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 좌측 상단 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_022.jpg',region=(0,0,1287,900))
+    
+
+    #TC_023 여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_023"
+    print("----------------------------- ATC_023 -------------------------------")   
+    try :
+        if travel_top1_blog_image.is_displayed() :
+            print("여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_023.jpg',region=(0,0,1287,900))
+    
+    #TC_024 여행·맛집 탭 첫번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_024"
+    print("----------------------------- ATC_024 -------------------------------")   
     try :
         if travel_top1_text_title.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 타이틀 노출 성공!")
@@ -534,12 +569,12 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_022.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_024.jpg',region=(0,0,1287,900))
     
 
-    #TC_023 여행·맛집 탭 6개 포스트 내용 노출 여부 확인
-    tc_progress = "ATC_023"
-    print("----------------------------- ATC_023 -------------------------------")   
+    #TC_025 여행·맛집 탭 첫번째 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_025"
+    print("----------------------------- ATC_025 -------------------------------")   
     try :
         if travel_top1_text_desc.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 내용 노출 성공!")
@@ -550,11 +585,11 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_023.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_025.jpg',region=(0,0,1287,900))
 
-    #TC_024 여행·맛집 탭 6개 포스트 좋아요 아이콘 노출 여부 확인
-    tc_progress = "ATC_024"
-    print("----------------------------- ATC_024 -------------------------------")   
+    #TC_026 여행·맛집 탭 첫번째 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_026"
+    print("----------------------------- ATC_026 -------------------------------")   
     try :
         if travel_top1_like_icon.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 좋아요 아이콘 노출 성공!")
@@ -565,11 +600,11 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_024.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_026.jpg',region=(0,0,1287,900))
 
-    #TC_025 여행·맛집 탭 6개 포스트 좋아요 카운트 노출 여부 확인
-    tc_progress = "ATC_025"
-    print("----------------------------- ATC_025 -------------------------------")   
+    #TC_027 여행·맛집 탭 첫번째 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_027"
+    print("----------------------------- ATC_027 -------------------------------")   
     try :
         if travel_top1_like_count.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 좋아요 Count 노출 성공!")
@@ -580,11 +615,11 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_025.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_027.jpg',region=(0,0,1287,900))
     
-    #TC_026 여행·맛집 탭 6개 포스트 댓글 아이콘 노출 여부 확인
-    tc_progress = "ATC_026"
-    print("----------------------------- ATC_026 -------------------------------")   
+    #TC_028 여행·맛집 탭 첫번째 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_028"
+    print("----------------------------- ATC_028 -------------------------------")   
     try :
         if travel_top1_reply_icon.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 댓글 아이콘 노출 성공!")
@@ -595,11 +630,11 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_026.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_028.jpg',region=(0,0,1287,900))
     
-    #TC_027 여행·맛집 탭 6개 포스트 댓글 카운트 노출 여부 확인
-    tc_progress = "ATC_027"
-    print("----------------------------- ATC_027 -------------------------------")   
+    #TC_029 여행·맛집 탭 첫번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_029"
+    print("----------------------------- ATC_029 -------------------------------")   
     try :
         if travel_top1_reply_count.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 댓글 카운트 노출 성공!")
@@ -610,11 +645,11 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_027.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_029.jpg',region=(0,0,1287,900))
     
-    #TC_028 여행·맛집 탭 6개 포스트 Date 노출 여부 확인
-    tc_progress = "ATC_028"
-    print("----------------------------- ATC_028 -------------------------------")   
+    #TC_030 여행·맛집 탭 첫번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_030"
+    print("----------------------------- ATC_030 -------------------------------")   
     try :
         if travel_top1_date.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 Date 노출 성공!")
@@ -625,8 +660,182 @@ try :
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
-        pyautogui.screenshot(f'./{now}_Fail_shot_TC_028.jpg',region=(0,0,1287,900))
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_030.jpg',region=(0,0,1287,900))
     
+    travel_top2_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[2]/div')
+    travel_top2_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/div/a/div/img')
+    travel_top2_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/div/a/span')
+    travel_top2_text_blog_name = travel_top2_blog_name.text
+    travel_top2_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/strong')
+    travel_top2_text_title_text = travel_top2_text_title.text
+    travel_top2_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[1]/p')
+    travel_top2_text_desc_text = travel_top2_text_desc.text
+    travel_top2_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[1]/span[1]')
+    travel_top2_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[1]/span[2]')
+    travel_top2_like_count_num = travel_top2_like_count.text
+    travel_top2_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[2]/span[1]')
+    travel_top2_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[2]/span[2]')
+    travel_top2_reply_count_num = travel_top2_reply_count.text
+    travel_top2_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[3]')
+    travel_top2_date_num = travel_top2_date.text
+
+    print("-------------------- 여행·맛집 탭 우측 상단 포스트 정보 -------------")
+    print("여행·맛집 탭 우측 상단 포스트 블로그 명 => " + travel_top2_text_blog_name)
+    print("여행·맛집 탭 우측 상단 포스트 타이틀 => " + travel_top2_text_title_text)
+    print("여행·맛집 탭 우측 상단 포스트 내용 => " + travel_top2_text_desc_text)
+    print("여행·맛집 탭 우측 상단 포스트 좋아요 카운트 => " + travel_top2_like_count_num)
+    print("여행·맛집 탭 우측 상단 포스트 댓글 카운트 => " + travel_top2_reply_count_num)
+    print("여행·맛집 탭 우측 상단 포스트 작성 일자 => " + travel_top2_date_num)
+
+    #TC_031 여행·맛집 탭 우측 상단 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_031"
+    print("----------------------------- ATC_031 -------------------------------")   
+    try :
+        if travel_top2_picture.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_031.jpg',region=(0,0,1287,900))
+
+    #TC_032 여행·맛집 탭 좌측 상단 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_032"
+    print("----------------------------- ATC_032 -------------------------------")   
+    try :
+        if travel_top1_blog_image.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_032.jpg',region=(0,0,1287,900))
+    
+    #TC_033 여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_033"
+    print("----------------------------- ATC_033 -------------------------------")   
+    try :
+        if travel_top2_blog_image.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_033.jpg',region=(0,0,1287,900))
+    
+    #TC_034 여행·맛집 탭 첫번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_034"
+    print("----------------------------- ATC_034 -------------------------------")   
+    try :
+        if travel_top2_text_title.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_034.jpg',region=(0,0,1287,900))  
+
+    #TC_034 여행·맛집 탭 우측 상단 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_034"
+    print("----------------------------- ATC_034 -------------------------------")   
+    try :
+        if travel_top2_text_desc.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 좌측 상단 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_034.jpg',region=(0,0,1287,900))
+
+    #TC_035 여행·맛집 탭 우측 상단 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_035"
+    print("----------------------------- ATC_035 -------------------------------")   
+    try :
+        if travel_top2_like_icon.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_035.jpg',region=(0,0,1287,900))
+
+    #TC_036 여행·맛집 탭 우측 상단 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_036"
+    print("----------------------------- ATC_036 -------------------------------")   
+    try :
+        if travel_top2_like_count.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_036.jpg',region=(0,0,1287,900))
+    
+    #TC_037 여행·맛집 탭 우측 상단 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_037"
+    print("----------------------------- ATC_037 -------------------------------")   
+    try :
+        if travel_top2_reply_icon.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_037.jpg',region=(0,0,1287,900))
+    
+    #TC_038 여행·맛집 탭 첫번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_038"
+    print("----------------------------- ATC_038 -------------------------------")   
+    try :
+        if travel_top2_reply_count.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_038.jpg',region=(0,0,1287,900))
+    
+    #TC_039 여행·맛집 탭 첫번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_039"
+    print("----------------------------- ATC_039 -------------------------------")   
+    try :
+        if travel_top2_date.is_displayed() :
+            print("여행·맛집 탭 우측 상단 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '여행·맛집 탭 우측 상단 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_039.jpg',region=(0,0,1287,900))
 
     browser.find_element(By.XPATH,'//*[@id="kakaoHead"]/div/div[3]/div/a').click()
     browser.find_element(By.XPATH,'/html/body/div[5]/div/div/a[2]/span[2]').click()
