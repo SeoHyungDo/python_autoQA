@@ -833,21 +833,21 @@ try :
         fail_reason_list.append(fail_reason)
         pyautogui.screenshot(f'./{now}_Fail_shot_TC_041.jpg',region=(0,0,1287,900))
 
-    travel_top3_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[2]/div')
-    travel_top3_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/div/img')
-    travel_top3_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/span')
+    travel_top3_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[2]/div')
+    travel_top3_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/div/a/div/img')
+    travel_top3_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/div/a/span')
     travel_top3_text_blog_name = travel_top3_blog_name.text
-    travel_top3_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/strong')
+    travel_top3_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/strong')
     travel_top3_text_title_text = travel_top3_text_title.text
-    travel_top3_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[1]/p')
+    travel_top3_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[1]/p')
     travel_top3_text_desc_text = travel_top3_text_desc.text
-    travel_top3_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[1]/span[1]')
-    travel_top3_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[1]/span[2]')
+    travel_top3_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[1]/span[1]')
+    travel_top3_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[1]/span[2]')
     travel_top3_like_count_num = travel_top3_like_count.text
-    travel_top3_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[2]/span[1]')
-    travel_top3_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[2]/span[2]')
+    travel_top3_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[2]/span[1]')
+    travel_top3_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[2]/span[2]')
     travel_top3_reply_count_num = travel_top3_reply_count.text
-    travel_top3_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[3]')
+    travel_top3_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[3]')
     travel_top3_date_num = travel_top3_date.text
 
     print("-------------------- 여행·맛집 탭 하단 첫번째 포스트 정보 -------------")
@@ -893,11 +893,11 @@ try :
     print("----------------------------- ATC_044 -------------------------------")   
     try :
         if travel_top3_blog_image.is_displayed() :
-            print("여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 성공!")
+            print("여행·맛집 탭 하단 첫번째 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
     except Exception as e :
-        fail_reason = '여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 실패\n'
+        fail_reason = '여행·맛집 탭 하단 첫번째 포스트 블로그 이름 노출 실패\n'
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
@@ -938,11 +938,11 @@ try :
     print("----------------------------- ATC_047 -------------------------------")   
     try :
         if travel_top3_like_icon.is_displayed() :
-            print("여행·맛집 탭 좌측 상단 포스트 좋아요 아이콘 노출 성공!")
+            print("여행·맛집 탭 하단 첫번째 포스트 좋아요 아이콘 노출 성공!")
             result_pass_list.append(tc_progress)
 
     except Exception as e :
-        fail_reason = '여행·맛집 탭 좌측 상단 포스트 좋아요 아이콘 노출 실패\n'
+        fail_reason = '여행·맛집 탭 하단 첫번째 포스트 좋아요 아이콘 노출 실패\n'
         print(fail_reason)
         result_fail_list.append(tc_progress)
         fail_reason_list.append(fail_reason)
