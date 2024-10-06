@@ -540,7 +540,7 @@ try :
     tc_progress = "ATC_023"
     print("----------------------------- ATC_023 -------------------------------")   
     try :
-        if travel_top1_blog_image.is_displayed() :
+        if travel_top1_blog_name.is_displayed() :
             print("여행·맛집 탭 좌측 상단 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -715,7 +715,7 @@ try :
     tc_progress = "ATC_033"
     print("----------------------------- ATC_033 -------------------------------")   
     try :
-        if travel_top2_blog_image.is_displayed() :
+        if travel_top2_blog_name.is_displayed() :
             print("여행·맛집 탭 우측 상단 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -890,7 +890,7 @@ try :
     tc_progress = "ATC_043"
     print("----------------------------- ATC_043 -------------------------------")   
     try :
-        if travel_top3_blog_image.is_displayed() :
+        if travel_top3_blog_name.is_displayed() :
             print("여행·맛집 탭 하단 첫번째 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -1065,7 +1065,7 @@ try :
     tc_progress = "ATC_053"
     print("----------------------------- ATC_053 -------------------------------")   
     try :
-        if travel_top4_blog_image.is_displayed() :
+        if travel_top4_blog_name.is_displayed() :
             print("여행·맛집 탭 하단 두번째 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -1240,7 +1240,7 @@ try :
     tc_progress = "ATC_063"
     print("----------------------------- ATC_063 -------------------------------")   
     try :
-        if travel_top5_blog_image.is_displayed() :
+        if travel_top5_blog_name.is_displayed() :
             print("여행·맛집 탭 하단 세번째 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -1416,7 +1416,7 @@ try :
     tc_progress = "ATC_073"
     print("----------------------------- ATC_073 -------------------------------")   
     try :
-        if travel_top6_blog_image.is_displayed() :
+        if travel_top6_blog_name.is_displayed() :
             print("여행·맛집 탭 하단 네번째 포스트 블로그 이름 노출 성공!")
             result_pass_list.append(tc_progress)
 
@@ -1532,6 +1532,1060 @@ try :
         fail_reason_list.append(fail_reason)
         pyautogui.screenshot(f'./{now}_Fail_shot_TC_080.jpg',region=(0,0,1287,900))
 
+    browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[1]/div/a[2]/span[2]').click()
+    sleep(1)
+    
+    # 리빙 메뉴
+    living_top1_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[2]/div')
+    living_top1_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/div/img')
+    living_top1_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/div/a/span')
+    living_top1_text_blog_name = living_top1_blog_name.text
+    living_top1_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/strong')
+    living_top1_text_title_text = living_top1_text_title.text
+    living_top1_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[1]/p')
+    living_top1_text_desc_text = living_top1_text_desc.text
+    living_top1_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top1_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top1_like_count_num = living_top1_like_count.text
+    living_top1_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top1_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top1_reply_count_num = living_top1_reply_count.text
+    living_top1_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[1]/a/div[1]/div[2]/span[3]')
+    living_top1_date_num = living_top1_date.text
+
+    print("-------------------- 리빙·스타일 탭 좌측 상단 포스트 정보 -------------")
+    print("리빙·스타일 탭 좌측 상단 포스트 블로그 명 => " + living_top1_text_blog_name)
+    print("리빙·스타일 탭 좌측 상단 포스트 타이틀 => " + living_top1_text_title_text)
+    print("리빙·스타일 탭 좌측 상단 포스트 내용 => " + living_top1_text_desc_text)
+    print("리빙·스타일 탭 좌측 상단 포스트 좋아요 카운트 => " + living_top1_like_count_num)
+    print("리빙·스타일 탭 좌측 상단 포스트 댓글 카운트 => " + living_top1_reply_count_num)
+    print("리빙·스타일 탭 좌측 상단 포스트 작성 일자 => " + living_top1_date_num)
+
+    #TC_081 리빙·스타일 탭 좌측 상단 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_081"
+    print("----------------------------- ATC_021 -------------------------------")   
+    try :
+        if living_top1_picture.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_081.jpg',region=(0,0,1287,900))
+
+    #TC_082 리빙·스타일 탭 좌측 상단 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_082"
+    print("----------------------------- ATC_082 -------------------------------")   
+    try :
+        if living_top1_blog_image.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_082.jpg',region=(0,0,1287,900))
+    
+    #TC_083 리빙·스타일 탭 좌측 상단 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_083"
+    print("----------------------------- ATC_083 -------------------------------")   
+    try :
+        if living_top1_blog_image.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_083.jpg',region=(0,0,1287,900))
+    
+    #TC_084 리빙·스타일 탭 좌측 상단 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_084"
+    print("----------------------------- ATC_084 -------------------------------")   
+    try :
+        if living_top1_text_title.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_084.jpg',region=(0,0,1287,900))
+    
+    #TC_085 리빙·스타일 탭 좌측 상단 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_085"
+    print("----------------------------- ATC_085 -------------------------------")   
+    try :
+        if living_top1_text_desc.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_085.jpg',region=(0,0,1287,900))
+
+    #TC_086 리빙·스타일 탭 좌측 상단 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_086"
+    print("----------------------------- ATC_086 -------------------------------")   
+    try :
+        if living_top1_like_icon.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_086.jpg',region=(0,0,1287,900))
+
+    #TC_087 리빙·스타일 탭 좌측 상단 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_087"
+    print("----------------------------- ATC_087 -------------------------------")   
+    try :
+        if living_top1_like_count.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_087.jpg',region=(0,0,1287,900))
+    
+    #TC_088 리빙·스타일 탭 좌측 상단 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_088"
+    print("----------------------------- ATC_088 -------------------------------")   
+    try :
+        if living_top1_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_088.jpg',region=(0,0,1287,900))
+    
+    #TC_089 리빙·스타일 탭 좌측 상단 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_089"
+    print("----------------------------- ATC_089 -------------------------------")   
+    try :
+        if living_top1_reply_count.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_089.jpg',region=(0,0,1287,900))
+    
+    #TC_090 리빙·스타일 탭 좌측 상단 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_090"
+    print("----------------------------- ATC_090 -------------------------------")   
+    try :
+        if living_top1_date.is_displayed() :
+            print("리빙·스타일 탭 좌측 상단 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_090.jpg',region=(0,0,1287,900))
+    
+    living_top2_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[2]/div')
+    living_top2_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/div/a/div/img')
+    living_top2_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/div/a/span')
+    living_top2_text_blog_name = living_top2_blog_name.text
+    living_top2_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/strong')
+    living_top2_text_title_text = living_top2_text_title.text
+    living_top2_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[1]/p')
+    living_top2_text_desc_text = living_top2_text_desc.text
+    living_top2_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top2_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top2_like_count_num = living_top2_like_count.text
+    living_top2_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top2_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top2_reply_count_num = living_top2_reply_count.text
+    living_top2_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[2]/a/div[1]/div[2]/span[3]')
+    living_top2_date_num = living_top2_date.text
+
+    print("-------------------- 리빙·스타일 탭 우측 상단 포스트 정보 -------------")
+    print("리빙·스타일 탭 우측 상단 포스트 블로그 명 => " + living_top2_text_blog_name)
+    print("리빙·스타일 탭 우측 상단 포스트 타이틀 => " + living_top2_text_title_text)
+    print("리빙·스타일 탭 우측 상단 포스트 내용 => " + living_top2_text_desc_text)
+    print("리빙·스타일 탭 우측 상단 포스트 좋아요 카운트 => " + living_top2_like_count_num)
+    print("리빙·스타일 탭 우측 상단 포스트 댓글 카운트 => " + living_top2_reply_count_num)
+    print("리빙·스타일 탭 우측 상단 포스트 작성 일자 => " + living_top2_date_num)
+
+    #TC_091 리빙·스타일 탭 우측 상단 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_091"
+    print("----------------------------- ATC_091 -------------------------------")   
+    try :
+        if living_top2_picture.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_091.jpg',region=(0,0,1287,900))
+
+    #TC_092 리빙·스타일 탭 우측 상단 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_092"
+    print("----------------------------- ATC_092 -------------------------------")   
+    try :
+        if living_top1_blog_image.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_092.jpg',region=(0,0,1287,900))
+    
+    #TC_093 리빙·스타일 탭 우측 상단 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_093"
+    print("----------------------------- ATC_093 -------------------------------")   
+    try :
+        if living_top2_blog_image.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_093.jpg',region=(0,0,1287,900))
+    
+    #TC_094 리빙·스타일 탭 우측 상단 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_094"
+    print("----------------------------- ATC_094 -------------------------------")   
+    try :
+        if living_top2_text_title.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_094.jpg',region=(0,0,1287,900))  
+
+    #TC_095 리빙·스타일 탭 우측 상단 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_095"
+    print("----------------------------- ATC_095 -------------------------------")   
+    try :
+        if living_top2_text_desc.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 좌측 상단 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_095.jpg',region=(0,0,1287,900))
+
+    #TC_096 리빙·스타일 탭 우측 상단 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_096"
+    print("----------------------------- ATC_096 -------------------------------")   
+    try :
+        if living_top2_like_icon.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_096.jpg',region=(0,0,1287,900))
+
+    #TC_097 리빙·스타일 탭 우측 상단 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_097"
+    print("----------------------------- ATC_097 -------------------------------")   
+    try :
+        if living_top2_like_count.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_097.jpg',region=(0,0,1287,900))
+    
+    #TC_098 리빙·스타일 탭 우측 상단 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_098"
+    print("----------------------------- ATC_098 -------------------------------")   
+    try :
+        if living_top2_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_098.jpg',region=(0,0,1287,900))
+    
+    #TC_099 리빙·스타일 탭 우측 상단 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_099"
+    print("----------------------------- ATC_099 -------------------------------")   
+    try :
+        if living_top2_reply_count.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_099.jpg',region=(0,0,1287,900))
+    
+    #TC_100 리빙·스타일 탭 우측 상단 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_100"
+    print("----------------------------- ATC_100 -------------------------------")   
+    try :
+        if living_top2_date.is_displayed() :
+            print("리빙·스타일 탭 우측 상단 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 우측 상단 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_100.jpg',region=(0,0,1287,900))
+
+    living_top3_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[2]/div')
+    living_top3_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/div/a/div/img')
+    living_top3_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/div/a/span')
+    living_top3_text_blog_name = living_top3_blog_name.text
+    living_top3_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/strong')
+    living_top3_text_title_text = living_top3_text_title.text
+    living_top3_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[1]/p')
+    living_top3_text_desc_text = living_top3_text_desc.text
+    living_top3_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top3_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top3_like_count_num = living_top3_like_count.text
+    living_top3_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top3_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top3_reply_count_num = living_top3_reply_count.text
+    living_top3_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[3]/a/div[1]/div[2]/span[3]')
+    living_top3_date_num = living_top3_date.text
+
+    print("-------------------- 리빙·스타일 탭 하단 첫번째 포스트 정보 -------------")
+    print("리빙·스타일 탭 하단 첫번째 포스트 블로그 명 => " + living_top3_text_blog_name)
+    print("리빙·스타일 탭 하단 첫번째 포스트 타이틀 => " + living_top3_text_title_text)
+    print("리빙·스타일 탭 하단 첫번째 포스트 내용 => " + living_top3_text_desc_text)
+    print("리빙·스타일 탭 하단 첫번째 포스트 좋아요 카운트 => " + living_top3_like_count_num)
+    print("리빙·스타일 탭 하단 첫번째 상단 포스트 댓글 카운트 => " + living_top3_reply_count_num)
+    print("리빙·스타일 탭 하단 첫번째 상단 포스트 작성 일자 => " + living_top3_date_num)
+
+    #TC_101 리빙·스타일 탭 하단 첫번째 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_101"
+    print("----------------------------- ATC_101 -------------------------------")   
+    try :
+        if living_top3_picture.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_101.jpg',region=(0,0,1287,900))
+
+    #TC_102 리빙·스타일 탭 하단 첫번째 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_102"
+    print("----------------------------- ATC_102 -------------------------------")   
+    try :
+        if living_top3_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_102.jpg',region=(0,0,1287,900))
+    
+    #TC_103 리빙·스타일 탭 하단 첫번째 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_103"
+    print("----------------------------- ATC_103 -------------------------------")   
+    try :
+        if living_top3_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_103.jpg',region=(0,0,1287,900))
+    
+    #TC_104 리빙·스타일 탭 하단 첫번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_104"
+    print("----------------------------- ATC_104 -------------------------------")   
+    try :
+        if living_top3_text_title.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_104.jpg',region=(0,0,1287,900))
+    
+    #TC_105 리빙·스타일 탭 하단 첫번째 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_105"
+    print("----------------------------- ATC_105 -------------------------------")   
+    try :
+        if living_top3_text_desc.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_105.jpg',region=(0,0,1287,900))
+
+    #TC_106 리빙·스타일 탭 하단 첫번째 포스트 좋아요 아이콘 노출 여부 확인
+    tc_prog5ress = "ATC_106"
+    print("----------------------------- ATC_106 -------------------------------")   
+    try :
+        if living_top3_like_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_106.jpg',region=(0,0,1287,900))
+
+    #TC_107 리빙·스타일 탭 하단 첫번째 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_107"
+    print("----------------------------- ATC_107 -------------------------------")   
+    try :
+        if living_top3_like_count.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_107.jpg',region=(0,0,1287,900))
+    
+    #TC_108 리빙·스타일 탭 하단 첫번째 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_108"
+    print("----------------------------- ATC_108 -------------------------------")   
+    try :
+        if living_top3_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_108.jpg',region=(0,0,1287,900))
+    
+    #TC_109 리빙·스타일 탭 하단 첫번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_109"
+    print("----------------------------- ATC_109 -------------------------------")   
+    try :
+        if living_top3_reply_count.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_109.jpg',region=(0,0,1287,900))
+    
+    #TC_110 리빙·스타일 탭 하단 첫번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_110"
+    print("----------------------------- ATC_110 -------------------------------")   
+    try :
+        if living_top3_date.is_displayed() :
+            print("리빙·스타일 탭 하단 첫번째 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 첫번째 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_110.jpg',region=(0,0,1287,900))
+
+    living_top4_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[2]/div')
+    living_top4_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/div/a/div/img')
+    living_top4_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/div/a/span')
+    living_top4_text_blog_name = living_top4_blog_name.text
+    living_top4_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/strong')
+    living_top4_text_title_text = living_top4_text_title.text
+    living_top4_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[1]/p')
+    living_top4_text_desc_text = living_top4_text_desc.text
+    living_top4_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top4_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top4_like_count_num = living_top4_like_count.text
+    living_top4_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top4_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top4_reply_count_num = living_top4_reply_count.text
+    living_top4_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[4]/a/div[1]/div[2]/span[3]')
+    living_top4_date_num = living_top4_date.text
+
+    print("-------------------- 리빙·스타일 탭 하단 두번째 포스트 정보 -------------")
+    print("리빙·스타일 탭 하단 두번째 포스트 블로그 명 => " + living_top4_text_blog_name)
+    print("리빙·스타일 탭 하단 두번째 포스트 타이틀 => " + living_top4_text_title_text)
+    print("리빙·스타일 탭 하단 두번째 포스트 내용 => " + living_top4_text_desc_text)
+    print("리빙·스타일 탭 하단 두번째 포스트 좋아요 카운트 => " + living_top4_like_count_num)
+    print("리빙·스타일 탭 하단 두번째 상단 포스트 댓글 카운트 => " + living_top4_reply_count_num)
+    print("리빙·스타일 탭 하단 두번째 상단 포스트 작성 일자 => " + living_top4_date_num)
+
+    #TC_111 리빙·스타일 탭 하단 두번째 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_111"
+    print("----------------------------- ATC_111 -------------------------------")   
+    try :
+        if living_top4_picture.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_111.jpg',region=(0,0,1287,900))
+
+    #TC_112 리빙·스타일 탭 하단 첫번째 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_112"
+    print("----------------------------- ATC_112 -------------------------------")   
+    try :
+        if living_top4_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_112.jpg',region=(0,0,1287,900))
+    
+    #TC_113 리빙·스타일 탭 하단 두번째 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_113"
+    print("----------------------------- ATC_113 -------------------------------")   
+    try :
+        if living_top4_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_113.jpg',region=(0,0,1287,900))
+    
+    #TC_114 리빙·스타일 탭 하단 두번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_114"
+    print("----------------------------- ATC_114 -------------------------------")   
+    try :
+        if living_top4_text_title.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_114.jpg',region=(0,0,1287,900))
+    
+    #TC_115 리빙·스타일 탭 하단 두번째 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_115"
+    print("----------------------------- ATC_115 -------------------------------")   
+    try :
+        if living_top4_text_desc.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_115.jpg',region=(0,0,1287,900))
+
+    #TC_116 리빙·스타일 탭 하단 두번째 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_116"
+    print("----------------------------- ATC_116 -------------------------------")   
+    try :
+        if living_top4_like_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_116.jpg',region=(0,0,1287,900))
+
+    #TC_117 리빙·스타일 탭 하단 두번째 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_117"
+    print("----------------------------- ATC_117 -------------------------------")   
+    try :
+        if living_top4_like_count.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_117.jpg',region=(0,0,1287,900))
+    
+    #TC_118 리빙·스타일 탭 하단 두번째 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_118"
+    print("----------------------------- ATC_118 -------------------------------")   
+    try :
+        if living_top4_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_118.jpg',region=(0,0,1287,900))
+    
+    #TC_119 리빙·스타일 탭 하단 두번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_119"
+    print("----------------------------- ATC_119 -------------------------------")   
+    try :
+        if living_top4_reply_count.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_119.jpg',region=(0,0,1287,900))
+    
+    #TC_120 리빙·스타일 탭 하단 두번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_120"
+    print("----------------------------- ATC_120 -------------------------------")   
+    try :
+        if living_top4_date.is_displayed() :
+            print("리빙·스타일 탭 하단 두번째 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 두번째 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_120.jpg',region=(0,0,1287,900))
+
+    living_top5_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[2]/div')
+    living_top5_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/div/a/div/img')
+    living_top5_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/div/a/span')
+    living_top5_text_blog_name = living_top5_blog_name.text
+    living_top5_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/strong')
+    living_top5_text_title_text = living_top5_text_title.text
+    living_top5_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[1]/p')
+    living_top5_text_desc_text = living_top5_text_desc.text
+    living_top5_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top5_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top5_like_count_num = living_top5_like_count.text
+    living_top5_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top5_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top5_reply_count_num = living_top5_reply_count.text
+    living_top5_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[5]/a/div[1]/div[2]/span[3]')
+    living_top5_date_num = living_top5_date.text
+
+    print("-------------------- 리빙·스타일 탭 하단 세번째 포스트 정보 -------------")
+    print("리빙·스타일 탭 하단 세번째 포스트 블로그 명 => " + living_top5_text_blog_name)
+    print("리빙·스타일 탭 하단 세번째 포스트 타이틀 => " + living_top5_text_title_text)
+    print("리빙·스타일 탭 하단 세번째 포스트 내용 => " + living_top5_text_desc_text)
+    print("리빙·스타일 탭 하단 세번째 포스트 좋아요 카운트 => " + living_top5_like_count_num)
+    print("리빙·스타일 탭 하단 세번째 상단 포스트 댓글 카운트 => " + living_top5_reply_count_num)
+    print("리빙·스타일 탭 하단 세번째 상단 포스트 작성 일자 => " + living_top5_date_num)
+
+    #TC_121 리빙·스타일 탭 하단 세번째 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_121"
+    print("----------------------------- ATC_121 -------------------------------")   
+    try :
+        if living_top5_picture.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_121.jpg',region=(0,0,1287,900))
+
+    #TC_122 리빙·스타일 탭 하단 세번째 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_122"
+    print("----------------------------- ATC_122 -------------------------------")   
+    try :
+        if living_top5_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_122.jpg',region=(0,0,1287,900))
+    
+    #TC_123 리빙·스타일 탭 하단 세번째 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_123"
+    print("----------------------------- ATC_123 -------------------------------")   
+    try :
+        if living_top5_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_123.jpg',region=(0,0,1287,900))
+    
+    #TC_124 리빙·스타일 탭 하단 세번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_124"
+    print("----------------------------- ATC_124 -------------------------------")   
+    try :
+        if living_top5_text_title.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_124.jpg',region=(0,0,1287,900))
+    
+    #TC_125 리빙·스타일 탭 하단 세번째 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_125"
+    print("----------------------------- ATC_125 -------------------------------")   
+    try :
+        if living_top5_text_desc.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_125.jpg',region=(0,0,1287,900))
+
+    #TC_126 리빙·스타일 탭 하단 세번째 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_126"
+    print("----------------------------- ATC_126 -------------------------------")   
+    try :
+        if living_top5_like_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_126.jpg',region=(0,0,1287,900))
+
+    #TC_127 리빙·스타일 탭 하단 세번째 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_127"
+    print("----------------------------- ATC_127 -------------------------------")   
+    try :
+        if living_top5_like_count.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_127.jpg',region=(0,0,1287,900))
+    
+    #TC_128 리빙·스타일 탭 하단 세번째 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_128"
+    print("----------------------------- ATC_128 -------------------------------")   
+    try :
+        if living_top5_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_128.jpg',region=(0,0,1287,900))
+    
+    #TC_129 리빙·스타일 탭 하단 세번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_129"
+    print("----------------------------- ATC_129 -------------------------------")   
+    try :
+        if living_top5_reply_count.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_129.jpg',region=(0,0,1287,900))
+    
+    #TC_130 리빙·스타일 탭 하단 세번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_130"
+    print("----------------------------- ATC_130 -------------------------------")   
+    try :
+        if living_top5_date.is_displayed() :
+            print("리빙·스타일 탭 하단 세번째 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 세번째 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_130.jpg',region=(0,0,1287,900))
+
+
+    living_top6_picture = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[2]/div')
+    living_top6_blog_image = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/div/a/div/img')
+    living_top6_blog_name = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/div/a/span')
+    living_top6_text_blog_name = living_top6_blog_name.text
+    living_top6_text_title = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/strong')
+    living_top6_text_title_text = living_top6_text_title.text
+    living_top6_text_desc = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[1]/p')
+    living_top6_text_desc_text = living_top6_text_desc.text
+    living_top6_like_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[2]/span[1]/span[1]')
+    living_top6_like_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[2]/span[1]/span[2]')
+    living_top6_like_count_num = living_top6_like_count.text
+    living_top6_reply_icon = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[2]/span[2]/span[1]')
+    living_top6_reply_count = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[2]/span[2]/span[2]')
+    living_top6_reply_count_num = living_top6_reply_count.text
+    living_top6_date = browser.find_element(By.XPATH,'//*[@id="mArticle"]/div/div[1]/div[3]/div[2]/div[6]/a/div[1]/div[2]/span[3]')
+    living_top6_date_num = living_top6_date.text
+
+    print("-------------------- 리빙·스타일 탭 하단 네번째 포스트 정보 -------------")
+    print("리빙·스타일 탭 하단 네번째 포스트 블로그 명 => " + living_top6_text_blog_name)
+    print("리빙·스타일 탭 하단 네번째 포스트 타이틀 => " + living_top6_text_title_text)
+    print("리빙·스타일 탭 하단 네번째 포스트 내용 => " + living_top6_text_desc_text)
+    print("리빙·스타일 탭 하단 네번째 포스트 좋아요 카운트 => " + living_top6_like_count_num)
+    print("리빙·스타일 탭 하단 네번째 상단 포스트 댓글 카운트 => " + living_top6_reply_count_num)
+    print("리빙·스타일 탭 하단 네번째 상단 포스트 작성 일자 => " + living_top6_date_num)
+
+    #TC_131 리빙·스타일 탭 하단 네번째 포스트 사진 노출 여부 확인
+    tc_progress = "ATC_131"
+    print("----------------------------- ATC_131 -------------------------------")   
+    try :
+        if living_top6_picture.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 사진 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 사진 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_131.jpg',region=(0,0,1287,900))
+
+    #TC_132 리빙·스타일 탭 하단 네번째 포스트 블로거 아이콘 노출 여부 확인
+    tc_progress = "ATC_132"
+    print("----------------------------- ATC_132 -------------------------------")   
+    try :
+        if living_top6_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 블로거 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 블로거 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_132.jpg',region=(0,0,1287,900))
+    
+    #TC_133 리빙·스타일 탭 하단 네번째 포스트 블로그 이름 노출 여부 확인
+    tc_progress = "ATC_133"
+    print("----------------------------- ATC_133 -------------------------------")   
+    try :
+        if living_top6_blog_image.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 블로그 이름 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 블로그 이름 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_133.jpg',region=(0,0,1287,900))
+    
+    #TC_134 리빙·스타일 탭 하단 네번째 포스트 타이틀 노출 여부 확인
+    tc_progress = "ATC_134"
+    print("----------------------------- ATC_134 -------------------------------")   
+    try :
+        if living_top6_text_title.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 타이틀 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 타이틀 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_134.jpg',region=(0,0,1287,900))
+    
+    #TC_135 리빙·스타일 탭 하단 네번째 포스트 내용 노출 여부 확인
+    tc_progress = "ATC_135"
+    print("----------------------------- ATC_135 -------------------------------")   
+    try :
+        if living_top6_text_desc.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 내용 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 내용 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_135.jpg',region=(0,0,1287,900))
+
+    #TC_136 리빙·스타일 탭 하단 네번째 포스트 좋아요 아이콘 노출 여부 확인
+    tc_progress = "ATC_136"
+    print("----------------------------- ATC_136 -------------------------------")   
+    try :
+        if living_top6_like_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 좋아요 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 좋아요 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_136.jpg',region=(0,0,1287,900))
+
+    #TC_137 리빙·스타일 탭 하단 네번째 포스트 좋아요 카운트 노출 여부 확인
+    tc_progress = "ATC_137"
+    print("----------------------------- ATC_137 -------------------------------")   
+    try :
+        if living_top6_like_count.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 좋아요 Count 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 좋아요 Count 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_137.jpg',region=(0,0,1287,900))
+    
+    #TC_138 리빙·스타일 탭 하단 네번째 포스트 댓글 아이콘 노출 여부 확인
+    tc_progress = "ATC_138"
+    print("----------------------------- ATC_138 -------------------------------")   
+    try :
+        if living_top6_reply_icon.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 댓글 아이콘 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 댓글 아이콘 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_138.jpg',region=(0,0,1287,900))
+    
+    #TC_139 리빙·스타일 탭 하단 네번째 포스트 댓글 카운트 노출 여부 확인
+    tc_progress = "ATC_139"
+    print("----------------------------- ATC_139 -------------------------------")   
+    try :
+        if living_top6_reply_count.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 댓글 카운트 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 댓글 카운트 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_139.jpg',region=(0,0,1287,900))
+    
+    #TC_140 리빙·스타일 탭 하단 네번째 포스트 Date 노출 여부 확인
+    tc_progress = "ATC_140"
+    print("----------------------------- ATC_140 -------------------------------")   
+    try :
+        if living_top6_date.is_displayed() :
+            print("리빙·스타일 탭 하단 네번째 포스트 Date 노출 성공!")
+            result_pass_list.append(tc_progress)
+
+    except Exception as e :
+        fail_reason = '리빙·스타일 탭 하단 네번째 포스트 Date 노출 실패\n'
+        print(fail_reason)
+        result_fail_list.append(tc_progress)
+        fail_reason_list.append(fail_reason)
+        pyautogui.screenshot(f'./{now}_Fail_shot_TC_140.jpg',region=(0,0,1287,900))
 
     browser.find_element(By.XPATH,'//*[@id="kakaoHead"]/div/div[3]/div/a').click()
     browser.find_element(By.XPATH,'/html/body/div[5]/div/div/a[2]/span[2]').click()
